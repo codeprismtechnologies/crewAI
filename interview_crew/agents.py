@@ -1,7 +1,7 @@
 from langtrace_python_sdk import langtrace
 from crewai import Agent
 from langtrace_python_sdk import langtrace
-from langchain_openai import ChatOpenAI
+from langchain_community.llms.ollama import Ollama
 from dotenv import load_dotenv
 import os
 
@@ -9,10 +9,12 @@ load_dotenv()
 
 LANGTRACE_API_KEY = os.environ["LANGTRACE_API_KEY"]
 VERBOSE = os.environ["VERBOSE"]
-GPT_MODEL = os.environ["GPT_MODEL"]
+LLAMA_MODEL = os.environ["LLAMA_MODEL"]
+BASE_URL = os.environ["BASE_URL"]
 
 langtrace.init(api_key=LANGTRACE_API_KEY)
-llm = ChatOpenAI(model=GPT_MODEL, temperature=0)
+llm = Ollama(model=LLAMA_MODEL, base_url=BASE_URL)
+
 
 
 class InterviewAgents:

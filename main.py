@@ -28,7 +28,7 @@ app.add_middleware(
 )
 
 expertise_mapping = {
-    "BEGINNER": "Slightly Moderate",
+    "BEGINNER": "Moderate",
     "INTERMEDIATE": "Medium",
     "EXPERIENCED": "Hard"
 }
